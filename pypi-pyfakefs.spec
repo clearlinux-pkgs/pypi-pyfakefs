@@ -14,11 +14,11 @@ Requires: pypi-pyfakefs-license = %{version}-%{release}
 Requires: pypi-pyfakefs-python = %{version}-%{release}
 Requires: pypi-pyfakefs-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pluggy
+BuildRequires : pypi(pluggy)
 BuildRequires : py-python
 BuildRequires : pytest
 BuildRequires : tox
-BuildRequires : virtualenv
+BuildRequires : pypi(virtualenv)
 
 %description
 pyfakefs implements a fake file system that mocks the Python file system modules.
