@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-pyfakefs
-Version  : 5.2.2
-Release  : 24
-URL      : https://files.pythonhosted.org/packages/a2/a4/c4b4337b37eef938adf66899e882a9b00b8110f00d6057655a0962b381a0/pyfakefs-5.2.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/a2/a4/c4b4337b37eef938adf66899e882a9b00b8110f00d6057655a0962b381a0/pyfakefs-5.2.2.tar.gz
+Version  : 5.2.3
+Release  : 25
+URL      : https://files.pythonhosted.org/packages/e4/d9/4d7b8d1a0b0fc18a371ee24d19a61117d721df966ddd7292997e00b6c1f5/pyfakefs-5.2.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/e4/d9/4d7b8d1a0b0fc18a371ee24d19a61117d721df966ddd7292997e00b6c1f5/pyfakefs-5.2.3.tar.gz
 Summary  : pyfakefs implements a fake file system that mocks the Python file system modules.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -15,6 +15,7 @@ Requires: pypi-pyfakefs-license = %{version}-%{release}
 Requires: pypi-pyfakefs-python = %{version}-%{release}
 Requires: pypi-pyfakefs-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+BuildRequires : pypi(setuptools)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -50,10 +51,10 @@ python3 components for the pypi-pyfakefs package.
 
 
 %prep
-%setup -q -n pyfakefs-5.2.2
-cd %{_builddir}/pyfakefs-5.2.2
+%setup -q -n pyfakefs-5.2.3
+cd %{_builddir}/pyfakefs-5.2.3
 pushd ..
-cp -a pyfakefs-5.2.2 buildavx2
+cp -a pyfakefs-5.2.3 buildavx2
 popd
 
 %build
@@ -61,15 +62,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681485724
+export SOURCE_DATE_EPOCH=1689090069
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
