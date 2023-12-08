@@ -7,7 +7,7 @@
 #
 Name     : pypi-pyfakefs
 Version  : 5.3.2
-Release  : 30
+Release  : 31
 URL      : https://files.pythonhosted.org/packages/80/cb/af1d1c9075a3b1b8b663a9acb026c07ea6c0b6203b6c9d59836afb933b35/pyfakefs-5.3.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/80/cb/af1d1c9075a3b1b8b663a9acb026c07ea6c0b6203b6c9d59836afb933b35/pyfakefs-5.3.2.tar.gz
 Summary  : pyfakefs implements a fake file system that mocks the Python file system modules.
@@ -64,7 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1701899502
+export SOURCE_DATE_EPOCH=1702070172
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
