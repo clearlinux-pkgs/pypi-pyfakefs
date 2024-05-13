@@ -1,5 +1,5 @@
 PKG_NAME := pypi-pyfakefs
-URL = https://files.pythonhosted.org/packages/74/8c/5a8d25e21d6b42ea6c454e24d88802d25059c7460f45663ff43215ceea65/pyfakefs-5.4.1.tar.gz
+URL = https://files.pythonhosted.org/packages/b4/c1/9aba92f9fecb2b81a83efd516d028c6ddcbd3cebdfb3ecba42b9c858f5e8/pyfakefs-5.5.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
