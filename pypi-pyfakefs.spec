@@ -6,10 +6,10 @@
 # autospec commit: 65cf152
 #
 Name     : pypi-pyfakefs
-Version  : 5.9.0
-Release  : 47
-URL      : https://files.pythonhosted.org/packages/76/9b/086e03044e1bc2fde783243d91464786bffd1e8440bd7ad54e09dc9bdd03/pyfakefs-5.9.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/76/9b/086e03044e1bc2fde783243d91464786bffd1e8440bd7ad54e09dc9bdd03/pyfakefs-5.9.0.tar.gz
+Version  : 5.9.1
+Release  : 48
+URL      : https://files.pythonhosted.org/packages/73/89/cb396a7aef5c76013cb44efd778ba3d89953b1d64304bf2d684a1d4ae06a/pyfakefs-5.9.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/73/89/cb396a7aef5c76013cb44efd778ba3d89953b1d64304bf2d684a1d4ae06a/pyfakefs-5.9.1.tar.gz
 Summary  : Implements a fake file system that mocks the Python file system modules.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -58,10 +58,10 @@ python3 components for the pypi-pyfakefs package.
 
 
 %prep
-%setup -q -n pyfakefs-5.9.0
-cd %{_builddir}/pyfakefs-5.9.0
+%setup -q -n pyfakefs-5.9.1
+cd %{_builddir}/pyfakefs-5.9.1
 pushd ..
-cp -a pyfakefs-5.9.0 buildavx2
+cp -a pyfakefs-5.9.1 buildavx2
 popd
 
 %build
@@ -69,7 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1750687673
+export SOURCE_DATE_EPOCH=1750774205
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
